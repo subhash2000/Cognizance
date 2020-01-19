@@ -1,0 +1,6 @@
+framework module Pods_Cognizance {
+  umbrella header "Pods-Cognizance-umbrella.h"
+
+  export *
+  module * { export * }
+}
