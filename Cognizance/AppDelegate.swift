@@ -10,24 +10,45 @@ import UIKit
 import GoogleSignIn
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
+//    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+//        if let error = error {
+//            print("0")
+//          if (error as NSError).code == GIDSignInErrorCode.hasNoAuthInKeychain.rawValue {
+//            print("The user has not signed in before or they have since signed out.")
+//          } else {
+//            print("\(error.localizedDescription)")
+//          }
+//
+//        }
+//        else{
+//            print("1")
+//            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+//                       let tabbarVC = storyboard.instantiateViewController(withIdentifier: "Home") as! Home
+//                       //self.present(tabbarVC, animated: false, completion: nil)
+//            self.window?.rootViewController?.present(tabbarVC, animated: false, completion: nil)
+//
+//        }
+//
+//        // Perform any operations on signed in user here.
+//        let userId = user.userID                  // For client-side use only!
+//        let idToken = user.authentication.idToken // Safe to send to the server
+//        let fullName = user.profile.name
+//        let givenName = user.profile.givenName
+//        let familyName = user.profile.familyName
+//        let email = user.profile.email
+//    }
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        if let error = error {
-          if (error as NSError).code == GIDSignInErrorCode.hasNoAuthInKeychain.rawValue {
-            print("The user has not signed in before or they have since signed out.")
-          } else {
-            print("\(error.localizedDescription)")
-          }
-          return
+       
+            let googleUser = GIDSignIn.sharedInstance()?.currentUser
+            if googleUser != nil {
+             let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let tabbarVC = storyboard.instantiateViewController(withIdentifier: "Home") as! Home
+          //  self.present(tabbarVC, animated: false, completion: nil)
+                     self.window?.rootViewController?.present(tabbarVC, animated: false, completion: nil)
+            }
         }
-        // Perform any operations on signed in user here.
-        let userId = user.userID                  // For client-side use only!
-        let idToken = user.authentication.idToken // Safe to send to the server
-        let fullName = user.profile.name
-        let givenName = user.profile.givenName
-        let familyName = user.profile.familyName
-        let email = user.profile.email
-    }
-  
+    
+ 
    
 var window: UIWindow?
 
@@ -35,7 +56,7 @@ var window: UIWindow?
         // Override point for customization after application launch.
 //        window = UIWindow(frame: UIScreen.main.bounds)
 //               window?.makeKeyAndVisible()
-//               
+//
 //               let mainVC = Home()
 //               window?.rootViewController = mainVC
         GIDSignIn.sharedInstance()?.clientID =  "356037148112-rtiptdd2fe7jlvj4vnci5rg7m2e9kjuf.apps.googleusercontent.com"

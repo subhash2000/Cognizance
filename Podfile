@@ -7,7 +7,7 @@ target 'Cognizance' do
  pod 'GoogleSignIn'
 pod 'Firebase/Auth'
   pod 'FBSDKLoginKit'
-  pod 'Alamofire', '~> 4.7'
+ pod 'Alamofire', '~> 5.0.0-rc.3'
   pod 'SwiftyJSON', '~> 4.0'
   pod 'NVActivityIndicatorView', '~> 4.0'
   pod 'ReachabilitySwift'
