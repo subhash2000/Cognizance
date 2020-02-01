@@ -1,20 +1,19 @@
 //
-//  MapViewController.swift
+//  ScannerController.swift
 //  Cognizance
 //
-//  Created by Subhash  on 1/17/20.
+//  Created by Subhash  on 1/28/20.
 //  Copyright © 2020 Subhash . All rights reserved.
 //
 
 import UIKit
 
-class MapViewController: UITabBarController {
+class ScannerController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-       view.backgroundColor = UIColor.white
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.title = "Map"
+        navigationItem.title = "Scanner"
+        view.backgroundColor = UIColor.white
         // Do any additional setup after loading the view.
     }
     
